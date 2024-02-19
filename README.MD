@@ -1,12 +1,4 @@
-# Issue: CUDA Tree Learner Not Enabled in LightGBM Docker Image
-
-## Description
-
-When attempting to use LightGBM with CUDA in a Docker container, users may encounter an error stating: "CUDA Tree Learner was not enabled in this build. Please recompile with CMake option -DUSE_CUDA=1". This error indicates that the CUDA support was not properly enabled during the build process of the LightGBM library within the Docker image.
-
 ## Reproduction Steps
-
-To reproduce this issue, follow these steps:
 
 1. Clone the repository containing the Dockerfile with LightGBM installed.
 2. Open a terminal and navigate to the directory containing the Dockerfile.
@@ -48,4 +40,4 @@ The code should execute without errors, and the LightGBM model should be trained
 
 ### Observed Behavior
 
-An error message is displayed: "[LightGBM] [Fatal] CUDA Tree Learner was not enabled in this build. Please recompile with CMake option -DUSE_CUDA=1".
+An error message is displayed: "LightGBMError: Check failed: (split_indices_block_size_data_partition) > (0) at /usr/local/src/lightgbm/LightGBM/lightgbm-python/src/treelearner/cuda/cuda_data_partition.cpp, line 280 .".
