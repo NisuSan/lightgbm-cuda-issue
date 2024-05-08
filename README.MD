@@ -25,7 +25,7 @@ dtrain = lgb.Dataset(X, label=y)
 bst = lgb.train(
 	params={
 	   "objective": "regression",
-	   "device": "cuda",
+	   "device": "gpu",
 	   "verbose": 1
 	},
 	train_set=dtrain,
